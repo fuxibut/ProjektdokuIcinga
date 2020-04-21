@@ -19,17 +19,29 @@ Es wurden die entsprechenden Verantwortlichen via E-Mail, Telefonaten und Meetin
 
 Über alle Abteilungen hinweg werden verschiedenste Windows-Versionen sowie Linux-Distributionen eingesetzt, weswegen ausschließlich ein plattformunabhängiges Monitoring-System wie \glqq Icinga\grqq{} eingesetzt werden kann. Zwar sind die meisten Server virtualisiert, allerdings werden gerade bei Datenbanken auch dedizierte Rechner eingesetzt, welche selbstverständlich ebenfalls überwacht werden müssen.
 
-Die zu überwachenden Parameter beziehungsweise Dienste ähneln sich zwischen den Abteilungen ebenfalls sehr stark. Neben Leistungsmetriken wie Prozessorauslastung, Arbeitsspeicherbelegung oder freiem Massenspeicher wird viel Wert auf die Überprüfung der Erreichbarkeit im Netzwerk gelegt. Weiterhin wurde der Wunsch nach einer grafischen Aufbereitung geäußert
+Die zu überwachenden Parameter beziehungsweise Dienste ähneln sich zwischen den Abteilungen ebenfalls sehr stark. Neben Leistungsmetriken wie Prozessorauslastung, Arbeitsspeicherbelegung oder freiem Massenspeicher wird viel Wert auf die Überprüfung der Erreichbarkeit im Netzwerk gelegt. Aufgrund der zunehmenden Verbreitung von webbasierten Anwendungen soll auch der Betrieb von Webservern überwacht werden. Weiterhin wurde der Wunsch nach einer grafischen Aufbereitung geäußert.
 
 \subsubsection{Kriterienkatalog}
 \label{sec:Kriterienkatalog}
-
+Auf Basis der Befragungen wurde folgender Kriterienkatalog aufgestellt:
+\begin{itemize}
+	\item Überwachbare Betriebssysteme
+	\begin{itemize}
+		\item Alle aktuellen Windows Server Versionen
+		\item Alle gängigen Linux-Distributionen
+	\end{itemize}
+	\item Überwachbare Systemparameter
+	\begin{itemize}
+		\item CPU-Auslastung
+		\item RAM-Belegung
+		\item Massenspeicherbelegung
+	\end{itemize}
+	\item Überwachung von Webservern
+	\item Ansprechende und anpassbare grafische Aufbereitung
+\end{itemize}
 
 \subsection{Wirtschaftlichkeitsanalyse}
 \label{sec:Wirtschaftlichkeitsanalyse}
-\begin{itemize}
-	\item Lohnt sich das Projekt für das Unternehmen?
-\end{itemize}
 
 \subsubsection{Projektkosten}
 \label{sec:Projektkosten}
@@ -52,6 +64,9 @@ Die Durchführungszeit des Projekts beträgt 70 Stunden. Für die Nutzung von Re
 ein pauschaler Stundensatz von \eur{15} angenommen. Für die anderen Mitarbeiter wird pauschal ein Stundenlohn von \eur{25} angenommen. 
 Eine Aufstellung der Kosten befindet sich in Tabelle~\ref{tab:Kostenaufstellung} und sie betragen insgesamt \eur{2739,20}.
 \tabelle{Kostenaufstellung}{tab:Kostenaufstellung}{Kostenaufstellung.tex}
+
+\subsubsection{Betriebskosten des Monitorings}
+\label{sec:BetriebskostenMonitoring}
 
 \subsubsection{Amortisationsdauer}
 \label{sec:Amortisationsdauer}
