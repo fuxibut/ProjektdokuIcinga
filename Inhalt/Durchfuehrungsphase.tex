@@ -9,15 +9,22 @@
 \label{sec:VorbereitungHardware}
 Eine ausrangierte DELL Precision Workstation dient als Hardwareplattform für das Projekt. Die Ausstattung von 32 Gigabyte Arbeitsspeicher und einem Intel Xeon Hochleistungsprozessor ist ausreichend für den Betrieb von mehreren virtuellen Maschinen.
 
-Um den Bedingungen in einem \glqq{}echtem\grqq{} Rechencenter möglichst nahe zu kommen, wird der Typ-1 Hypervisor mit zwei Netzwerkschnittstellen ausgestattet. Ein Interface ist für die Kommunikation mit dem Hypervisor selbst vorgesehen (sogenanntes Management-LAN), und eine weitere Netzwerkschnittstelle wird von den virtuellen Maschinen benutzt, um im Netzwerk erreichbar zu sein.
+Um den Bedingungen in einem \glqq{}echtem\grqq{} Rechencenter möglichst nahe zu kommen, wird der VM-Hypervisor mit zwei Netzwerkschnittstellen ausgestattet. Ein Interface ist für die Kommunikation mit dem Hypervisor selbst vorgesehen (sogenanntes Management-LAN), und eine weitere Netzwerkschnittstelle wird von den virtuellen Maschinen benutzt, um im Netzwerk erreichbar zu sein.
 
 Da die vorgesehene Workstation mit nur einem RJ45 Port ausgestattet war, wurde aus einer anderen die zusätzliche Netzwerkkarte entfernt und in diese eingebaut. Der Umbau gestaltete sich dank PCIe-Steckplatz als unkompliziert und war ohne Werkzeuggebrauch möglich.
 
 \subsubsection{Installation des Hypervisors}
 \label{sec:InstallationHypervisor}
+Um die gegeben Ressourcen optimal auszunutzen, wird ein sogenannter Typ 1-Hypervisor eingesetzt. Dieser kommuniziert direkt mit der Hardware, ohne dass ein anderes Betriebssystem zum Einsatz kommt. Der Markt an VM-Hypervisoren ist stark umkämpft; neben den bekannten Lösungen von den \glqq{}Platzhirschen\grqq{} Microsoft, VMware und Citrix existiert eine Vielzahl an kleinen, teils auch quelloffenen, Virtualisierungsplattformen. Für dieses Projekt wird das System \glqq{}ESXi\grqq{} von VMware in der Version 6.7 verwendet, das auch in den firmeneigenen Rechenzentren zum Einsatz kommt.
+
+Die Installation gestaltet sich als simpel. Nachdem wichtige UEFI-Optionen angepasst wurden (ausschließliche Verwendung von UEFI statt legacy-BIOS; Aktivierung der hardewareseitigen Unterstützung für Virtualisierung \glqq{}Intel VT-x\grqq{}) wird das System von einem USB-Datenträger, der zuvor mit dem ESXi-Image geflasht wurde, gestartet. Nachdem die für die Installation zu benutzende Festplatte ausgewählt, und ein Root-Passwort vergeben wurde, startet der Installationsvorgang. Nach abgeschlossener Installation muss noch eine IP-Adresse für das Managementnetzwerk vergeben werden.
+
+Die restliche Konfiguration geschieht bequem über eine Weboberfläche. Der Lizenzschlüssel wird hinterlegt, die zweite Festplatte als Datastore eingebunden, und das Netzwerk für die virtuellen Maschinen konfiguriert. Hierzu wird ein neuer virtueller Switch für den zweiten Netzwerkport (der, der nicht mit dem Management-LAN belegt ist) erstellt und mit einer neuen Port Group versehen. Diese Port Groups werden in ESXi verwendet, um logische Netzwerkschnittstellen bereit zu stellen und zu verwalten. 
 
 \subsubsection{Installation der virtuellen Maschinen}
 \label{sec:InstallationVMs}
+Für virtuelle Maschinen muss in der ESXi-Weboberfläche zunächst die Systemkonfiguration festgelegt werden. Hierfür werden die für die VM vorgesehene CPU-Kerne, Arbeits- und Massenspeicherspeicherkapazität sowie die zu benutzenden Port Groups eingestellt. Abschließend wird in ein virtuelles DVD-Laufwerk das ISO-Abbild für das entsprechende zu installierende Betriebssystem eingehängt, und die virtuelle Maschine gestartet.
+
 
 \subsubsection{Installation von \glqq{}Icinga\grqq{}}
 \label{sec:InstallationIcinga}
