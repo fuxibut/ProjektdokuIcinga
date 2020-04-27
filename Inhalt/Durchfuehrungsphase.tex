@@ -2,10 +2,40 @@
 \section{Durchführungsphase}
 \label{sec:Durchführungsphase}
 
-\subsection{Vorbereiten der Hardware}
+\subsection{Vorbereitung der Tests}
+\label{sec:VorbereitungTests}
+
+\subsubsection{Vorbereiten der Hardware}
 \label{sec:VorbereitungHardware}
 Eine ausrangierte DELL Precision Workstation dient als Hardwareplattform für das Projekt. Die Ausstattung von 32 Gigabyte Arbeitsspeicher und einem Intel Xeon Hochleistungsprozessor ist ausreichend für den Betrieb von mehreren virtuellen Maschinen.
 
-Um den Bedingungen in einem \glqq{} echtem\grqq{} Rechencenter möglichst nahe zu kommen, wird der Typ-1 Hypervisor mit zwei Netzwerkschnittstellen ausgestattet. Ein Interface ist für die Kommunikation mit dem Hypervisor selbst vorgesehen (sogenanntes Management-LAN), und eine weitere Netzwerkschnittstelle wird von den virtuellen Maschinen benutzt, um im Netzwerk erreichbar zu sein.
+Um den Bedingungen in einem \glqq{}echtem\grqq{} Rechencenter möglichst nahe zu kommen, wird der Typ-1 Hypervisor mit zwei Netzwerkschnittstellen ausgestattet. Ein Interface ist für die Kommunikation mit dem Hypervisor selbst vorgesehen (sogenanntes Management-LAN), und eine weitere Netzwerkschnittstelle wird von den virtuellen Maschinen benutzt, um im Netzwerk erreichbar zu sein.
 
 Da die vorgesehene Workstation mit nur einem RJ45 Port ausgestattet war, wurde aus einer anderen die zusätzliche Netzwerkkarte entfernt und in diese eingebaut. Der Umbau gestaltete sich dank PCIe-Steckplatz als unkompliziert und war ohne Werkzeuggebrauch möglich.
+
+\subsubsection{Installation des Hypervisors}
+\label{sec:InstallationHypervisor}
+
+\subsubsection{Installation der virtuellen Maschinen}
+\label{sec:InstallationVMs}
+
+\subsubsection{Installation von \glqq{}Icinga\grqq{}}
+\label{sec:InstallationIcinga}
+
+\subsection{Durchführung der Tests}
+\label{sec:DurchführungTests}
+
+\subsubsection{Einpflegen von Servern}
+\label{sec:EinpflegenServer}
+
+\subsubsection{Betriebssystemkompatibilität}
+\label{sec:EinpflegenServer}
+
+\subsubsection{Überwachung von Leistungsparametern}
+\label{sec:ÜberwachungLeistungsparameter}
+
+\subsubsection{Webserverüberwachung}
+\label{sec:ÜberwachungWebserver}
+
+\subsubsection{Grafische Aufbereitung}
+\label{sec:GrafischeAufbereitung}
