@@ -19,21 +19,27 @@ Um die gegeben Ressourcen optimal auszunutzen, wird ein sogenannter Typ 1-Hyperv
 
 Die Installation gestaltet sich als simpel. Nachdem wichtige UEFI-Optionen angepasst wurden (ausschließliche Verwendung von UEFI statt legacy-BIOS; Aktivierung der hardewareseitigen Unterstützung für Virtualisierung \glqq{}Intel VT-x\grqq{}) wird das System von einem USB-Datenträger, der zuvor mit dem ESXi-Image geflasht wurde, gestartet. Nachdem die für die Installation zu benutzende Festplatte ausgewählt, und ein Root-Passwort vergeben wurde, startet der Installationsvorgang. Nach abgeschlossener Installation muss noch eine IP-Adresse für das Managementnetzwerk vergeben werden.
 
-Die restliche Konfiguration geschieht bequem über eine Weboberfläche. Der Lizenzschlüssel wird hinterlegt, die zweite Festplatte als Datastore eingebunden, und das Netzwerk für die virtuellen Maschinen konfiguriert. Hierzu wird ein neuer virtueller Switch für den zweiten Netzwerkport (der, der nicht mit dem Management-LAN belegt ist) erstellt und mit einer neuen Port Group versehen. Diese Port Groups werden in ESXi verwendet, um logische Netzwerkschnittstellen bereit zu stellen und zu verwalten. 
+Die restliche Konfiguration geschieht bequem über eine Weboberfläche. Der Lizenzschlüssel wird hinterlegt, die zweite Festplatte als Datastore eingebunden, und das Netzwerk für die virtuellen Maschinen konfiguriert (siehe Abbildung \ref{screen:vmnetwork}). Hierzu wird ein neuer virtueller Switch für den zweiten Netzwerkport (der, der nicht mit dem Management-LAN belegt ist) erstellt und mit einer neuen Port Group versehen. Diese Port Groups werden in ESXi verwendet, um logische Netzwerkschnittstellen bereit zu stellen und zu verwalten. 
 
 \subsubsection{Installation der virtuellen Maschinen}
 \label{sec:InstallationVMs}
-Für virtuelle Maschinen muss in der ESXi-Weboberfläche zunächst die Systemkonfiguration festgelegt werden. Hierfür werden die für die VM vorgesehene CPU-Kerne, Arbeits- und Massenspeicherspeicherkapazität sowie die zu benutzenden Port Groups eingestellt. Abschließend wird in ein virtuelles DVD-Laufwerk das ISO-Abbild für das entsprechende zu installierende Betriebssystem eingehängt, und die virtuelle Maschine gestartet.
+Für virtuelle Maschinen muss in der ESXi-Weboberfläche zunächst die Systemkonfiguration festgelegt werden. Hierfür werden die für die VM vorgesehene CPU-Kerne, Arbeits- und Massenspeicherspeicherkapazität (siehe Abbildung \ref{screen:vmcreation}) sowie die zu benutzenden Port Groups eingestellt. Abschließend wird in ein virtuelles DVD-Laufwerk das ISO-Abbild für das entsprechende zu installierende Betriebssystem eingehängt, und die virtuelle Maschine gestartet. Die anschließende Betriebssysteminstallation kann über eine emulierte Browser-Konsole durchgeführt werden.
 
+Um in diesem Testsystem eine möglichst nah an das Firmennetzwerk heranzukommen, wurden drei Betriebssysteme für die Server ausgewählt: Windows Server 2019, Ubuntu 18.04 LTS sowie Debian 10.3. Die Installation der Systeme verlief ohne Probleme.
 
 \subsubsection{Installation von \glqq{}Icinga\grqq{}}
 \label{sec:InstallationIcinga}
+Die Installation von \glqq{}Icinga\grqq{} unter Ubuntu beginnt mit dem Aufruf der Rootshell und einem anschließendem kompletten Systemupdate. Danach werden mittels Paketverwaltung die wichtigsten Ressourcen installiert; die Pakete \code{icinga2} und \code{icingacli} sind für die Monitoring-Engine an sich sowie die Verwaltung über Kommandozeile zuständig. \code{monitoring-plugins} installiert die grundsätzlichen Monitoringmethoden (z.B. Ping) für Nagios-kompatible Systeme wie \glqq{}Icinga\grqq{}.
+
+Zusätzlich muss noch eine passende Datenbank aufgesetzt werden, hier fiel die Entscheidung aufgrund der firmeninteren Verbreitung sowie der In-Memory Unterstützung auf MySQL. Durch Installation der Pakete \code{mysql-server} und \code{mysql-client} werden ein MySQL-Server und ein MySQL-Client bereitgestellt, das Skript \code{mysql\_secure\_installation} (siehe Abbildung \ref{screen:mysqlsecure}) verbessert die Sicherheit der Installation durch Maßnahmen wie das Entfernen von anonymen Accounts oder die Absicherung des root-Accounts.
+
+\paragraph{Einpflegen von Servern}
+\label{sec:EinpflegenServer}
 
 \subsection{Durchführung der Tests}
 \label{sec:DurchführungTests}
 
-\subsubsection{Einpflegen von Servern}
-\label{sec:EinpflegenServer}
+
 
 \subsubsection{Betriebssystemkompatibilität}
 \label{sec:EinpflegenServer}
