@@ -33,6 +33,13 @@ Die Installation von \glqq{}Icinga\grqq{} unter Ubuntu beginnt mit dem Aufruf de
 
 Zusätzlich muss noch eine passende Datenbank aufgesetzt werden, hier fiel die Entscheidung aufgrund der firmeninteren Verbreitung sowie der In-Memory Unterstützung auf MySQL. Durch Installation der Pakete \code{mysql-server} und \code{mysql-client} werden ein MySQL-Server und ein MySQL-Client bereitgestellt, das Skript \code{mysql\_secure\_installation} (siehe Abbildung \ref{screen:mysqlsecure}) verbessert die Sicherheit der Installation durch Maßnahmen wie das Entfernen von anonymen Accounts oder die Absicherung des root-Accounts.
 
+Im nächsten Schritt muss die Schnittstelle zwischen \glqq{}Icinga Data Output\grqq{} (Exportfunktion für Monitoringdaten) und MySQL geschaffen werden, damit die gesammelten Daten auch gespeichert werden können. Dies geschieht durch Installation des Pakets \code{icinga2-ido-mysql}. Anschließend kann das Webinterface \code{icingaweb2} installiert werden.
+
+Beim Versuch, die über die Paketverwaltung verfügbare Version des Web-Frontends aufzurufen, wird lediglich ein PHP-Fehler (siehe Abbildung \ref{screen:phperror}) angezeigt. Nach einer umfangreichen Recherche ergab sich, dass dieser Fehler durch einen Bug verursacht wird, wodurch \glqq{}Icinga\grqq{} nicht mit bestimmten PHP 7.2 Plugins kompatibel ist. Dieser Fehler wurde bereits Mitte 2018 behoben, allerdings ist der Bugfix anscheinend nicht in das Paket eingespielt worden. Das Problem wurde gelöst, indem die aktuelle Version von \glqq{}Icinga Web 2\grqq{} vom öffentlichen Github-Repository nach \code{/usr/share/icingaweb2} geklont wurde.
+
+Ist \glqq{}Icinga Web 2\grqq{} fertig installiert, muss noch ein Benutzer für die MySQL-Datenbank erstellt werden. Abschließend wird IDO mittels \code{icinga2 feature enable command ido-mysql} aktiviert, und ein Setup-Token mit \code{icingacli setup token create} generiert werden. Nach einem Neustart des icinga2-Dienstes (\code{systemctl restart icinga2}) ist \glqq{}Icinga 2\grqq{} bereit über die Webschnittstelle eingerichtet zu werden.
+
+
 \paragraph{Einpflegen von Servern}
 \label{sec:EinpflegenServer}
 
