@@ -42,15 +42,18 @@ Ist \glqq{}Icinga Web 2\grqq{} fertig installiert, muss noch ein Benutzer für d
 \paragraph{Einrichtung über Webfrontend}
 Im Browser wird nun (IP-Adresse des Servers)/icingaweb2/setup aufgerufen, um den Konfigurationsassistenten (siehe Abbildung \ref{screen:konfigassistent}) zu starten. Dieser verlangt nach dem setup token, welcher im vorherigen Schritt generiert wurde. Nach Eingabe dieses tokens wird im ersten Schritt geprüft, ob alle notwendigen PHP-Plugins vorhanden sind. In der für diese Projekt durchgeführten Installation fehlten die Plugins \glqq{}PDO-PostgreSQL\grqq{}, welches aufgrund der Verwendung von MySQL nicht benötigt wird, sowie \glqq{}cURL\grqq{}, das mittels \code{apt install php7.2-curl} nachinstalliert wurde.
 
-Im Abschnitt \glqq{}Configuration\grqq{} werden weitere Einstellungen getroffen, hierbei bietet sich aber meistens an, die Standardeinstellungen beizubehalten. Eine Ausnahme stellt die bevorzugte Authentifizierungsmethode für Benutzer des Frontends dar; hier kann zwischen LDAP und einer Datenbank mit Benutzern gewählt werden. Für dieses Projekt wurde aufgrund des geringeren Umfangs letztere Option gewählt, die Konfiguration hierfür findet sich in Abbildung \ref{screen:userdb}.
+Im Abschnitt \glqq{}Configuration\grqq{} werden noch kleinere, weitere Einstellungen getroffen, hierbei bietet sich aber meistens an, die Standardeinstellungen beizubehalten. Eine Ausnahme stellt die bevorzugte Authentifizierungsmethode für Benutzer des Frontends dar; hier kann zwischen LDAP und einer Datenbank mit Benutzern gewählt werden. Für dieses Projekt wurde aufgrund des geringeren Umfangs letztere Option gewählt, die Konfiguration hierfür findet sich in Abbildung \ref{screen:userdb}.
 
 \paragraph{Einpflegen von Servern}
-\label{sec:EinpflegenServer}
+Ist der Konfigurationsassistent abgeschlossen, müssen die zu überwachenden Server eingepflegt werden. Durch Installation des Plugins \glqq{}Icinga Director\grqq{} kann dies auch über die Webschnittstelle erledigt werden, für dieses Projekt wird darauf verzichtet und die weitergehende Konfiguration geschieht über Anpassung der Konfigurationsdateien unter \code{/etc/icinga2/conf.d/}. Dort können in der Datei \code{hosts.conf} neue Server hinzugefügt werden (Syntax siehe Abbildung \ref{screen:newservers}). Abschließend kann die Syntax der Konfigurationsdateien mittels \code{icinga2 daemon --validate} überprüft werden; nach einem Neustart des \glqq{}Icinga 2\grqq{} Dienstes sind die neuen Hosts im Monitoring verfügbar.
+
+\paragraph{Installation des Agents}
+Mit der bisherigen Konfiguration können einfache Checks (z.B. Ping) auf die entsprechenden Server durchgeführt werden. Für aufwendigere Überprüfungen wie Speicherplatzkontrolle muss auf den Servern eine Software installiert werden. Hierfür muss zunächst der Monitoringserver als \glqq{}Master\grqq{} deklariert werden, dies geschieht mittels des Befehls \code{icinga2 node wizard}. Anschließend wird mit \code{sudo icinga2 pki ticket --cn (FQDN)} noch ein \glqq{}Ticket\grqq{} für den angegebenen FQDN erstellt, mithilfe dessen der Host die Verbindung zum Master herstellen kann.
+
+Der Host selbst installiert die Software ebenfalls, auf Linux-basierten Systemen besteht dies einfach aus dem Paket \code{icinga2}, für Windows existieren herunterladbare Installationsdateien. Mit Durchführung des Befehls \code{icinga2 node wizard} wird die Konfiguration des Agents abgeschlossen, bei Windows geschieht dies bequem über grafisches Userinterface. Nachdem die Adresse des Masters angegeben und eventuell Ports angepasst wurden, stellt der Agent eine Verbindung zum Monitoring her.
 
 \subsection{Durchführung der Tests}
 \label{sec:DurchführungTests}
-
-
 
 \subsubsection{Betriebssystemkompatibilität}
 \label{sec:EinpflegenServer}
