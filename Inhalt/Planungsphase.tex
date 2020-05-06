@@ -4,7 +4,7 @@
 
 \subsection{Ist-Analyse} 
 \label{sec:IstAnalyse}
-Zu Projektbeginn existiert im Unternehmen keine einheitliche Lösung zur Serverüberwachung. Für den Großteil der Server am Standort Augsburg wird der \glqq Advanced Host Monitor\grqq{} eingesetzt. Diese Lösung erhält trotz ihres Alters noch regelmäßige Updates, aufgrund des veralteten User Interfaces und einem beschränktem Funktionsumfang, sowie der nicht ausreichenden Leistungsfähigkeit, wird seit mehreren Jahren der Wunsch nach einem neuen Monitoring-System geäußert.
+Zu Projektbeginn existiert im Unternehmen keine einheitliche Lösung zur Serverüberwachung. Für den Großteil der Server am Standort Augsburg wird der \glqq Advanced Host Monitor\grqq{} eingesetzt. Diese Lösung erhält trotz ihres Alters noch regelmäßige Updates, aufgrund eines veralteten User Interfaces, einem beschränktem Funktionsumfang sowie der nicht mehr ausreichenden Leistungsfähigkeit, wird seit mehreren Jahren der Wunsch nach einem neuen Monitoring-System geäußert.
 
 Die Entwicklungsabteilungen überwachen die von ihnen betreuten Server mit einer auf \glqq Elasticsearch\grqq{} und \glqq Kibana\grqq{} basierenden Lösung. Um Know-how zu bündeln und Personalkosten zu sparen, signalisierten die Verantwortlichen eine Bereitschaft zur Zusammenlegung des Servermonitoring.
 
@@ -36,9 +36,9 @@ Auf Basis der Befragungen wurde folgender Kriterienkatalog aufgestellt:
 \label{sec:Projektkosten}
 Die Kosten, die durch das Projekt verursacht werden, setzen sich sowohl aus Personal- als auch aus Ressourcenkosten zusammen. Die Berechnung der Stundensätze findet sich im \Anhang{app:Stundensatz}.
 
-Die Kosten für die 35-Stunden-Woche des Auszubildenden belaufen sich auf \eur{350}. Die Arbeitszeit, die bei mitarbeitenden Personen zur Durchführung des Projekts angefallen ist (z.B. für Befragungen, Konfiguration der Netzwerkkomponenten, Anpassungen der Firewall für Updates, Abnahme) wurde auf vier Stunden geschätzt. Dafür fielen Personalkosten in Höhe von \eur{160} an. Die für das Projekt eingesetzte Hardware ist bereits abgeschrieben, und wird mit einer Pauschale von \eur{360} pro Jahr verrechnet. Auf die Projektdauer von fünf Tagen ergibt das Betriebskosten von \eur{4,93}.
+Die Kosten für die 35-Stunden-Woche des Auszubildenden belaufen sich auf \eur{350}. Die Arbeitszeit, die bei mitarbeitenden Personen zur Durchführung des Projekts angefallen ist (z.B. für Befragungen, Konfiguration der Netzwerkkomponenten, Anpassungen der Firewall für Updates, Abnahme) wurde auf vier Stunden geschätzt. Dafür fielen also Personalkosten in Höhe von \eur{160} an. Die für das Projekt eingesetzte Hardware ist bereits abgeschrieben, und wird mit einer Pauschale von \eur{360} pro Jahr verrechnet. Auf die Projektdauer von fünf Tagen ergibt das Betriebskosten von \eur{4,93}.
 
-Eine Aufstellung der Kosten befindet sich in Tabelle~\ref{tab:Kostenaufstellung}. Sie betragen insgesamt \eur{514,93}.
+Eine Aufstellung der Projektosten befindet sich in Tabelle~\ref{tab:Kostenaufstellung}. Sie betragen insgesamt \eur{514,93}.
 \tabelle{Kostenaufstellung Projekt}{tab:Kostenaufstellung}{Kostenaufstellung.tex}
 
 \subsubsection{Betriebskosten des Monitorings}
@@ -52,7 +52,7 @@ Die geschätzten Kosten für einen Hardware-Server belaufen sich auf \eur{4.000}
 
 \subsubsection{Amortisationsdauer}
 \label{sec:Amortisationsdauer}
-Sollte die Evaluation durch diese Projektarbeit ergeben, dass \glqq{}Icinga 2\grqq{} für den firmenweiten Einsatz geeignet ist, werden drei momentan im Betrieb befindliche Monitoringinstanzen (siehe \ref{sec:IstAnalyse} \nameref{sec:IstAnalyse}) durch ein zentrales \glqq{}Icinga\grqq{}-System ersetzt (siehe \ref{sec:Projektziel} \nameref{sec:Projektziel}). Die Betriebskosten für die derzeitigen Überwachungssysteme entsprechen etwa den in \ref{sec:BetriebskostenMonitoring} \nameref{sec:BetriebskostenMonitoring} berechneten \eur{11.360,00} pro Jahr; die jährliche Einsparung, wenn statt drei Systemen nur noch eines betrieben wird, beläuft sich also auf:
+Sollte die Evaluation durch diese Projektarbeit ergeben, dass \glqq{}Icinga 2\grqq{} für den firmenweiten Einsatz geeignet ist, werden drei momentan im Betrieb befindliche Monitoringinstanzen (siehe \ref{sec:IstAnalyse} \nameref{sec:IstAnalyse}) durch ein zentrales \glqq{}Icinga 2\grqq{}-System ersetzt (siehe \ref{sec:Projektziel} \nameref{sec:Projektziel}). Die Betriebskosten für die derzeitigen Überwachungssysteme entsprechen etwa den in \ref{sec:BetriebskostenMonitoring} \nameref{sec:BetriebskostenMonitoring} berechneten \eur{11.360,00} pro Jahr; die jährliche Einsparung, wenn statt drei Systemen nur noch eines betrieben wird, beläuft sich also auf:
 \begin{eqnarray}
 \eur{11.360,00} \cdot 2 \mbox{ Tage/Jahr} = \eur{22.720,00}
 \end{eqnarray}
