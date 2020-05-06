@@ -17,16 +17,14 @@ Am Standort Bremen wird seit mehreren Jahren auf die Open-Source-Anwendung \glqq
 \label{sec:BefragungFachabteilungen}
 Es wurden die entsprechenden Verantwortlichen via E-Mail, Telefonaten und Meetings zu den betreuten Servern und deren Monitoring befragt. Hierbei zeigten sich große Überschneidungen bei den Serverumgebungen sowie den Anforderungen an deren Überwachung, was eine Zusammenlegung logisch erscheinen lässt.
 
-Über alle Abteilungen hinweg werden verschiedenste Windows-Versionen sowie Linux-Distributionen eingesetzt, weswegen ausschließlich ein plattformunabhängiges Monitoring-System wie \glqq Icinga\grqq{} eingesetzt werden kann. Zwar sind die meisten Server virtualisiert, allerdings werden gerade bei Datenbanken auch dedizierte Rechner eingesetzt, welche selbstverständlich ebenfalls überwacht werden müssen.
-
-Die zu überwachenden Parameter beziehungsweise Dienste ähneln sich zwischen den Abteilungen ebenfalls sehr stark. Neben Leistungsmetriken wie Prozessorauslastung, Arbeitsspeicherbelegung oder freiem Massenspeicher wird viel Wert auf die Überprüfung der Erreichbarkeit im Netzwerk gelegt. Aufgrund der zunehmenden Verbreitung von webbasierten Anwendungen soll auch der Betrieb von Webservern überwacht werden. Weiterhin wurde der Wunsch nach einer grafischen Aufbereitung geäußert.
+Über alle Abteilungen hinweg werden verschiedenste Windows-Versionen sowie Linux-Distributionen eingesetzt, weswegen ausschließlich ein plattformunabhängiges Monitoring-System wie \glqq Icinga\grqq{} eingesetzt werden kann. Die zu überwachenden Parameter beziehungsweise Dienste ähneln sich zwischen den Abteilungen ebenfalls sehr stark. Neben Leistungsmetriken wie Prozessorauslastung, Arbeitsspeicherbelegung oder freiem Massenspeicher wird viel Wert auf die Überprüfung der Erreichbarkeit im Netzwerk gelegt. Aufgrund der zunehmenden Verbreitung von webbasierten Anwendungen soll auch der Betrieb von Webservern überwacht werden. Weiterhin wurde der Wunsch nach einer grafischen Aufbereitung geäußert.
 
 \subsubsection{Kriterienkatalog}
 \label{sec:Kriterienkatalog}
 Auf Basis der Befragungen wurde folgender Kriterienkatalog aufgestellt:
 \begin{itemize}
 	\item Überwachbare Betriebssysteme: Alle gängigen Windows Server Versionen und Linux-Distributionen
-	\item Überwachbare Systemparameter: \ac{CPU}-Auslastung, \ac{RAM}-Belegung, Massenspeicherbelegung
+	\item Überwachbare Systemparameter: CPU-Auslastung, RAM-Belegung, Massenspeicherbelegung
 	\item Überwachung von Webservern
 	\item Ansprechende und anpassbare grafische Aufbereitung
 \end{itemize}
@@ -45,7 +43,7 @@ Eine Aufstellung der Kosten befindet sich in Tabelle~\ref{tab:Kostenaufstellung}
 
 \subsubsection{Betriebskosten des Monitorings}
 \label{sec:BetriebskostenMonitoring}
-Die Betriebskosten für ein Monitoringsystem umfassen Personalkosten für Wartungsarbeiten und Anpassungen, sowie die Kosten die für zwei redundant ausgelegte Hardware-Server anfallen. Diese werden benötigt, da das Monitoring nicht innerhalb der Virtualisierungsumgebung betrieben werden sollte, um eine funktionierende Serverüberwachung auch bei Ausfall der \ac{VM}-Infrastruktur zu gewährleisten.
+Die Betriebskosten für ein Monitoringsystem umfassen Personalkosten für Wartungsarbeiten und Anpassungen, sowie die Kosten die für zwei redundant ausgelegte Hardware-Server anfallen. Diese werden benötigt, da das Monitoring nicht innerhalb der Virtualisierungsumgebung betrieben werden sollte, um eine funktionierende Serverüberwachung auch bei Ausfall der VM-Infrastruktur zu gewährleisten.
 
 Für das Einpflegen neuer Server oder Funktionen wird eine Arbeitsstunde pro Woche veranschlagt. Weiterhin wird der Arbeitsaufwand für Updates und Fehlerbehebungen nach Erfahrungsberichten auf acht Stunden pro Quartal geschätzt. Auf ein Jahr summiert ergibt beides einen Arbeitsaufwand von insgesamt 84 Stunden.
 
