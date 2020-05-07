@@ -8,7 +8,7 @@ Zu Projektbeginn existiert im Unternehmen keine einheitliche Lösung zur Server�
 
 Die Entwicklungsabteilungen überwachen die von ihnen betreuten Server mit einer auf \glqq Elasticsearch\grqq{} und \glqq Kibana\grqq{} basierenden Lösung. Um Know-how zu bündeln und Personalkosten zu sparen, signalisierten die Verantwortlichen eine Bereitschaft zur Zusammenlegung des Servermonitoring.
 
-Am Standort Bremen wird seit mehreren Jahren auf die Open-Source-Anwendung \glqq Icinga\grqq{} gesetzt. Die Systembetreuer haben mit dieser Lösung positive Erfahrungen gemacht, und loben insbesondere die einfache Erweiterbarkeit durch Plugins, sowie die Möglichkeit ohne Aufwand optisch ansprechende Dashboards zu erstellen. Aufgrund der Komplexität dieser Software und einem anstehenden Update auf \glqq Icinga 2\grqq{} wurde auch von dieser Seite der Wunsch nach einem einheitlichen und zentral verwaltetem Servermonitoring geäußert.
+Am Standort Bremen wird seit mehreren Jahren auf die Open-Source-Anwendung \glqq Icinga\grqq{} gesetzt. Die Systembetreuenden haben mit dieser Lösung positive Erfahrungen gemacht, und loben insbesondere die einfache Erweiterbarkeit durch Plugins, sowie die Möglichkeit ohne Aufwand optisch ansprechende Dashboards zu erstellen. Aufgrund der Komplexität dieser Software und einem anstehenden Update auf \glqq Icinga 2\grqq{} wurde auch von dieser Seite der Wunsch nach einem einheitlichen und zentral verwaltetem Servermonitoring geäußert.
 
 \subsection{Soll-Analyse} 
 \label{sec:SollAnalyse}
@@ -17,7 +17,7 @@ Am Standort Bremen wird seit mehreren Jahren auf die Open-Source-Anwendung \glqq
 \label{sec:BefragungFachabteilungen}
 Es wurden die entsprechenden Verantwortlichen via E-Mail, Telefonaten und Meetings zu den betreuten Servern und deren Monitoring befragt. Hierbei zeigten sich große Überschneidungen bei den Serverumgebungen sowie den Anforderungen an deren Überwachung, was eine Zusammenlegung logisch erscheinen lässt.
 
-Über alle Abteilungen hinweg werden verschiedenste Windows-Versionen sowie Linux-Distributionen eingesetzt, weswegen ausschließlich ein plattformunabhängiges Monitoring-System wie \glqq Icinga\grqq{} eingesetzt werden kann. Die zu überwachenden Parameter beziehungsweise Dienste ähneln sich zwischen den Abteilungen ebenfalls sehr stark. Neben Leistungsmetriken wie Prozessorauslastung, Arbeitsspeicherbelegung oder freiem Massenspeicher wird viel Wert auf die Überprüfung der Erreichbarkeit im Netzwerk gelegt. Aufgrund der zunehmenden Verbreitung von webbasierten Anwendungen soll auch der Betrieb von Webservern überwacht werden. Weiterhin wurde der Wunsch nach einer grafischen Aufbereitung geäußert.
+Über alle Abteilungen hinweg werden verschiedenste Windows-Versionen sowie Linux-Distributionen eingesetzt, weswegen ausschließlich ein plattformunabhängiges Monitoring-System wie \glqq Icinga 2\grqq{} eingesetzt werden kann. Die zu überwachenden Parameter beziehungsweise Dienste ähneln sich zwischen den Abteilungen ebenfalls sehr stark: Neben Leistungsmetriken wie Prozessorauslastung, Arbeitsspeicherbelegung oder freiem Massenspeicher wird viel Wert auf die Überprüfung der Erreichbarkeit im Netzwerk gelegt. Aufgrund der zunehmenden Verbreitung von webbasierten Anwendungen soll auch der Betrieb von Webservern überwacht werden. Weiterhin wurde der Wunsch nach einer ansprechenden grafischen Aufbereitung geäußert.
 
 \subsubsection{Kriterienkatalog}
 \label{sec:Kriterienkatalog}
@@ -54,11 +54,14 @@ Die geschätzten Kosten für einen Hardware-Server belaufen sich auf \eur{4.000}
 \label{sec:Amortisationsdauer}
 Sollte die Evaluation durch diese Projektarbeit ergeben, dass \glqq{}Icinga 2\grqq{} für den firmenweiten Einsatz geeignet ist, werden drei momentan im Betrieb befindliche Monitoringinstanzen (siehe \ref{sec:IstAnalyse} \nameref{sec:IstAnalyse}) durch ein zentrales \glqq{}Icinga 2\grqq{}-System ersetzt (siehe \ref{sec:Projektziel} \nameref{sec:Projektziel}). Die Betriebskosten für die derzeitigen Überwachungssysteme entsprechen etwa den in \ref{sec:BetriebskostenMonitoring} \nameref{sec:BetriebskostenMonitoring} berechneten \eur{11.360,00} pro Jahr; die jährliche Einsparung, wenn statt drei Systemen nur noch eines betrieben wird, beläuft sich also auf:
 \begin{eqnarray}
-\eur{11.360,00} \cdot 2 \mbox{ Tage/Jahr} = \eur{22.720,00}
+\eur{11.360,00} \cdot 2 = \eur{22.720,00}
 \end{eqnarray}
 Für die Ersteinrichtung des neuen Systems werden etwa zwei Wochen benötigt, also insgesamt 70 Arbeitsstunden. Das verursacht einmalige Kosten in Höhe von:
 \begin{eqnarray}
 70 \mbox{h} \cdot \eur{40,00} \mbox{/h} = \eur{2.800}
 \end{eqnarray}
+Die Amortisationszeit beträgt also:
+\begin{eqnarray}
+\frac{\eur{2.800}}{\eur{22.720,00}\mbox{/a}} \approx 0,123 \mbox{ Jahre} \approx 45 \mbox{ Tage}
+\end{eqnarray}
 \setcounter{equation}{0}
-Die Amortisationszeit beträgt also $\frac{\eur{2.800}}{\eur{22.720,00}\mbox{/a}} \approx 0,123 \mbox{ Jahre} \approx 45 \mbox{ Tage}$.
