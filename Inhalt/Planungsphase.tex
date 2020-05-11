@@ -34,9 +34,9 @@ Auf Basis der Befragungen wurde folgender Kriterienkatalog aufgestellt:
 
 \subsubsection{Projektkosten}
 \label{sec:Projektkosten}
-Die Kosten, die durch das Projekt verursacht werden, setzen sich sowohl aus Personal- als auch aus Ressourcenkosten zusammen. Die Berechnung der Stundensätze findet sich im \Anhang{app:Stundensatz}.
+Die Kosten, die durch das Projekt verursacht werden, setzen sich sowohl aus Personal- als auch aus Ressourcenkosten zusammen. Die Berechnung der (fiktiven) Stundensätze findet sich im \Anhang{app:Stundensatz}.
 
-Die Kosten für die 35-Stunden-Woche des Auszubildenden belaufen sich auf \eur{350}. Die Arbeitszeit, die bei mitarbeitenden Personen zur Durchführung des Projekts angefallen ist (z.B. für Befragungen, Konfiguration der Netzwerkkomponenten, Anpassungen der Firewall für Updates, Abnahme) wurde auf vier Stunden geschätzt. Dafür fielen also Personalkosten in Höhe von \eur{160} an. Die für das Projekt eingesetzte Hardware ist bereits abgeschrieben, und wird mit einer Pauschale von \eur{360} pro Jahr verrechnet. Auf die Projektdauer von fünf Tagen ergibt das Betriebskosten von \eur{4,93}.
+Die Kosten für die 35-Stunden-Woche des Auszubildenden belaufen sich auf \eur{350}. Die Arbeitszeit, die bei mitarbeitenden Personen zur Durchführung des Projekts angefallen ist (z.B. für Befragungen, Konfiguration der Netzwerkkomponenten, Anpassungen der Firewall für Updates, Abnahme) wurde auf vier Stunden geschätzt. Dafür fielen Personalkosten in Höhe von \eur{160} an. Die für das Projekt eingesetzte Hardware ist bereits abgeschrieben, und wird mit einer Pauschale von \eur{360} pro Jahr verrechnet. Auf die Projektdauer von fünf Tagen ergibt das Betriebskosten von \eur{4,93}.
 
 Eine Aufstellung der Projektosten befindet sich in Tabelle~\ref{tab:Kostenaufstellung}. Sie betragen insgesamt \eur{514,93}.
 \tabelle{Kostenaufstellung Projekt}{tab:Kostenaufstellung}{Kostenaufstellung.tex}
@@ -52,7 +52,7 @@ Die geschätzten Kosten für einen Hardware-Server belaufen sich auf \eur{4.000}
 
 \subsubsection{Amortisationsdauer}
 \label{sec:Amortisationsdauer}
-Sollte die Evaluation durch diese Projektarbeit ergeben, dass \glqq{}Icinga 2\grqq{} für den firmenweiten Einsatz geeignet ist, werden drei momentan im Betrieb befindliche Monitoringinstanzen (siehe \ref{sec:IstAnalyse} \nameref{sec:IstAnalyse}) durch ein zentrales \glqq{}Icinga 2\grqq{}-System ersetzt (siehe \ref{sec:Projektziel} \nameref{sec:Projektziel}). Die Betriebskosten für die derzeitigen Überwachungssysteme entsprechen etwa den in \ref{sec:BetriebskostenMonitoring} \nameref{sec:BetriebskostenMonitoring} berechneten \eur{11.360,00} pro Jahr; die jährliche Einsparung, wenn statt drei Systemen nur noch eines betrieben wird, beläuft sich also auf:
+Sollte die Evaluation durch diese Projektarbeit ergeben, dass \glqq{}Icinga 2\grqq{} für den firmenweiten Einsatz geeignet ist, werden drei momentan im Betrieb befindliche Monitoringinstanzen (siehe \ref{sec:IstAnalyse} \nameref{sec:IstAnalyse}) durch ein zentrales \glqq{}Icinga 2\grqq{}-System ersetzt (siehe \ref{sec:Projektziel} \nameref{sec:Projektziel}). Die Betriebskosten für die derzeitigen Überwachungssysteme entsprechen etwa den in \ref{sec:BetriebskostenMonitoring} \nameref{sec:BetriebskostenMonitoring} berechneten \eur{11.360,00} pro Jahr; die jährliche Einsparung, wenn statt drei Systemen nur noch eines betrieben wird, beläuft sich auf:
 \begin{eqnarray}
 \eur{11.360,00} \cdot 2 = \eur{22.720,00}
 \end{eqnarray}
@@ -60,7 +60,7 @@ Für die Ersteinrichtung des neuen Systems werden etwa zwei Wochen benötigt, al
 \begin{eqnarray}
 70 \mbox{h} \cdot \eur{40,00} \mbox{/h} = \eur{2.800}
 \end{eqnarray}
-Die Amortisationszeit beträgt also:
+Die Amortisationszeit beträgt somit:
 \begin{eqnarray}
 \frac{\eur{2.800}}{\eur{22.720,00}\mbox{/a}} \approx 0,123 \mbox{ Jahre} \approx 45 \mbox{ Tage}
 \end{eqnarray}
