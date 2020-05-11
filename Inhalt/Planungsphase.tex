@@ -17,7 +17,7 @@ Am Standort Bremen wird seit mehreren Jahren auf die Open-Source-Anwendung \glqq
 \label{sec:BefragungFachabteilungen}
 Es wurden die entsprechenden Verantwortlichen via E-Mail, Telefonaten und Meetings zu den betreuten Servern und deren Monitoring befragt. Hierbei zeigten sich große Überschneidungen bei den Serverumgebungen sowie den Anforderungen an deren Überwachung, was eine Zusammenlegung logisch erscheinen lässt.
 
-Über alle Abteilungen hinweg werden verschiedenste Windows-Versionen sowie Linux-Distributionen eingesetzt, weswegen ausschließlich ein plattformunabhängiges Monitoring-System wie \glqq Icinga 2\grqq{} eingesetzt werden kann. Die zu überwachenden Parameter beziehungsweise Dienste ähneln sich zwischen den Abteilungen ebenfalls sehr stark: Neben Leistungsmetriken wie Prozessorauslastung, Arbeitsspeicherbelegung oder freiem Massenspeicher wird viel Wert auf die Überprüfung der Erreichbarkeit im Netzwerk gelegt. Aufgrund der zunehmenden Verbreitung von webbasierten Anwendungen soll auch der Betrieb von Webservern überwacht werden. Weiterhin wurde der Wunsch nach einer ansprechenden grafischen Aufbereitung geäußert.
+Über alle Abteilungen hinweg werden verschiedenste Windows-Versionen sowie Linux-Distributionen eingesetzt, weswegen ausschließlich ein plattformunabhängiges Monitoring-System wie \glqq Icinga 2\grqq{} eingesetzt werden kann. Die zu überwachenden Parameter beziehungsweise Dienste ähneln sich zwischen den Abteilungen ebenfalls sehr stark: Neben Leistungsmetriken wie Prozessorauslastung, Arbeitsspeicherbelegung oder freiem Massenspeicher wird viel Wert auf die Überprüfung der Erreichbarkeit im Netzwerk gelegt. Aufgrund der zunehmenden Verbreitung von webbasierten Anwendungen soll auch der Betrieb von Webservern (plattformunabhängig) überwacht werden. Weiterhin wurde der Wunsch nach einer ansprechenden grafischen Aufbereitung geäußert.
 
 \subsubsection{Kriterienkatalog}
 \label{sec:Kriterienkatalog}
@@ -26,7 +26,7 @@ Auf Basis der Befragungen wurde folgender Kriterienkatalog aufgestellt:
 	\item Überwachbare Betriebssysteme: Alle gängigen Windows Server Versionen und Linux-Distributionen
 	\item Überwachbare Systemparameter: CPU-Auslastung, RAM-Belegung, Massenspeicherbelegung
 	\item Überwachung von Webservern
-	\item Ansprechende und anpassbare grafische Aufbereitung
+	\item Ansprechende und anpassbare grafische Aufbereitung im Webbrowser
 \end{itemize}
 
 \subsection{Wirtschaftlichkeitsanalyse}
