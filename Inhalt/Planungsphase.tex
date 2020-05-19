@@ -4,18 +4,18 @@
 
 \subsection{Ist-Analyse} 
 \label{sec:IstAnalyse}
-Zu Projektbeginn existiert im Unternehmen keine einheitliche Lösung zur Serverüberwachung. Für den Großteil der Server am Standort Augsburg wird der \glqq Advanced Host Monitor\grqq{} eingesetzt. Diese Lösung erhält trotz ihres Alters noch regelmäßige Updates, aufgrund eines veralteten User Interfaces, einem beschränktem Funktionsumfang sowie der nicht mehr ausreichenden Leistungsfähigkeit, wird seit mehreren Jahren der Wunsch nach einem neuen Monitoring-System geäußert.
+Zu Projektbeginn existiert im Unternehmen keine einheitliche Lösung zur Serverüberwachung. Für den Großteil der Server am Standort Augsburg wird der \glqq Advanced Host Monitor\grqq{} eingesetzt. Diese Lösung erhält trotz ihres Alters noch regelmäßige Updates. Aufgrund eines veralteten User Interfaces, einem beschränktem Funktionsumfang und der nicht mehr ausreichenden Leistungsfähigkeit wird jedoch seit vielen Jahren der Wunsch nach einem neuen Monitoring-System geäußert.
 
 Die Entwicklungsabteilungen überwachen die von ihnen betreuten Server mit einer auf \glqq Elasticsearch\grqq{} und \glqq Kibana\grqq{} basierenden Lösung. Um Know-how zu bündeln und Personalkosten zu sparen, signalisierten die Verantwortlichen eine Bereitschaft zur Zusammenlegung des Servermonitoring.
 
-Am Standort Bremen wird seit mehreren Jahren auf die Open-Source-Anwendung \glqq Icinga\grqq{} gesetzt. Die Systembetreuenden haben mit dieser Lösung positive Erfahrungen gemacht, und loben insbesondere die einfache Erweiterbarkeit durch Plugins, sowie die Möglichkeit ohne Aufwand optisch ansprechende Dashboards zu erstellen. Aufgrund der Komplexität dieser Software und einem anstehenden Update auf \glqq Icinga 2\grqq{} wurde auch von dieser Seite der Wunsch nach einem einheitlichen und zentral verwaltetem Servermonitoring geäußert.
+Am Standort Bremen wird seit mehreren Jahren auf die Open-Source-Anwendung \glqq Icinga\grqq{} gesetzt. Die Systembetreuenden haben mit dieser Lösung positive Erfahrungen gesammelt, und loben insbesondere die einfache Erweiterbarkeit durch Plugins sowie die Möglichkeit ohne Aufwand optisch ansprechende Dashboards zu erstellen. Aufgrund der Komplexität dieser Software und einem anstehenden Update auf \glqq Icinga 2\grqq{} wurde auch von dieser Seite der Wunsch nach einem einheitlichen und zentral verwaltetem Servermonitoring geäußert.
 
 \subsection{Soll-Analyse} 
 \label{sec:SollAnalyse}
 
 \subsubsection{Befragung der Fachabteilungen}
 \label{sec:BefragungFachabteilungen}
-Es wurden die entsprechenden Verantwortlichen via E-Mail, Telefonaten und Meetings zu den betreuten Servern und deren Monitoring befragt. Hierbei zeigten sich große Überschneidungen bei den Serverumgebungen sowie den Anforderungen an deren Überwachung, was eine Zusammenlegung logisch erscheinen lässt.
+Es wurden die entsprechenden Verantwortlichen via E-Mail, Telefonaten und Meetings zu den betreuten Servern und deren Monitoring befragt. Hierbei zeigten sich große Überschneidungen bei den Serverumgebungen und den Anforderungen an deren Überwachung, was eine Zusammenlegung logisch erscheinen lässt.
 
 Über alle Abteilungen hinweg werden verschiedenste Windows-Versionen sowie Linux-Distributionen eingesetzt, weswegen ausschließlich ein plattformunabhängiges Monitoring-System wie \glqq Icinga 2\grqq{} eingesetzt werden kann. In Abstimmung mit den Fachabteilungen wurden drei zu testende Betriebssysteme ausgewählt (siehe \ref{sec:InstallationVMs} \nameref{sec:InstallationVMs}). Die zu überwachenden Parameter beziehungsweise Dienste ähneln sich zwischen den Abteilungen ebenfalls sehr stark: Neben Leistungsmetriken wie Prozessorauslastung, Arbeitsspeicherbelegung oder freiem Massenspeicher wird viel Wert auf die Überprüfung der Erreichbarkeit im Netzwerk gelegt. Aufgrund der zunehmenden Verbreitung von webbasierten Anwendungen soll auch der Betrieb von Webservern (plattformunabhängig) überwacht werden. Weiterhin wurde der Wunsch nach einer ansprechenden grafischen Aufbereitung in einer Weboberfläche geäußert.
 
